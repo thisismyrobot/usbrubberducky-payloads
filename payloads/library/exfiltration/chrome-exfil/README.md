@@ -1,12 +1,16 @@
 # Chrome saved-credentials exfiltration
 
-A script to exfiltrate Chrome browser credentials from a target.
+A script to exfiltrate Chrome browser credentials from a target. Entered
+interactively to bypass a lot of PowerShell-related AV triggers.
+
+The Chrome GET request exfil is low bandwidth, but shouldn't raise the same
+level of AV-detection alarm as Invoke-WebRequest.
 
 ## Dependencies
 
  * Windows 10
  * PowerShell 5.1
-   (or PowerShell 7.x if you want to capture post-Chrome-v80 passwords)
+(or PowerShell 7.x if you want to capture post-Chrome-v80 passwords)
  * Chrome
 
 ## Configuration

