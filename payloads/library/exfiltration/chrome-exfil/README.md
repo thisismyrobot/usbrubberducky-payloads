@@ -9,8 +9,8 @@ level of AV-detection alarm as Invoke-WebRequest.
 ## Dependencies
 
  * Windows 10
- * PowerShell 5.1
-(or PowerShell 7.x if you want to capture post-Chrome-v80 passwords)
+ * PowerShell 5.1<br />
+   (or PowerShell 7.x if you want to capture post-Chrome-v80 passwords)
  * Chrome
 
 ## Configuration
