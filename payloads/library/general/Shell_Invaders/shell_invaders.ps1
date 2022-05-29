@@ -1,3 +1,4 @@
+# "Space Invaders"-ish game, in PowerShell.
 $w=80
 $h=30
 

@@ -1,6 +1,12 @@
-DELAY 2500
+REM Title: Shell Invaders
+REM Author: thisismyrobot
+REM Description: Creates a "Space Invaders"-style game in PowerShell.
+REM Target: Windows 10 (PowerShell)
+REM Version: 1.0
+REM Category: General
+DELAY 5000
 GUI r
-DELAY 1000
+DELAY 250
 STRING powershell iex 'Read-Host|iex'
 ENTER
 DELAY 1000
