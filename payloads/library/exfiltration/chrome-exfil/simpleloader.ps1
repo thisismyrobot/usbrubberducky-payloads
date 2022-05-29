@@ -20,6 +20,6 @@ $outputFile = "payload.txt"
 "ENTER",
 "DELAY 2500" | Out-File -e "ASCII" "$outputFile"
 
-$script.split("`n") | ForEach {"STRING $_" | Out-File -a -e "ASCII" "$outputFile"}
+$script.split("`n") | ForEach {"STRING $_`nENTER" | Out-File -a -e "ASCII" "$outputFile"}
 
 "ENTER" | Out-File -a -e "ASCII" "$outputFile"
