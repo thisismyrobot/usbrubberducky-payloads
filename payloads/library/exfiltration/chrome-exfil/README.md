@@ -36,8 +36,10 @@ decodes to `https://example.com/,example_user1,ex@mpl3PASSw0rD!`.
 ## Limitations
 
 There are various limitations around maximum URL lengths, you may run in to
-these with users with a lot of saved passwords. A ZIP compression pass would
-probably resolve this, or multiple GET requests.
+these with Chrome instances containing a lot of saved passwords. A ZIP
+compression pass would probably resolve this, or multiple GET requests.
+
+I haven't tested this with Unicode passwords.
 
 ## Credits
 
