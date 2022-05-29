@@ -1,4 +1,34 @@
-https://github.com/thisismyrobot/loaduck
-https://github.com/thisismyrobot/chrome-decrypt.ps1
-https://github.com/agentzex/chrome_v80_password_grabber/blob/master/chrome_v80_password_grabber.py
+# Chrome saved-credentials exfiltration
 
+A script to exfiltrate Chrome browser credentials from a target.
+
+## Dependencies
+
+ * Windows 10
+ * PowerShell 5.1
+   (or PowerShell 7.x if you want to capture post-Chrome-v80 passwords)
+ * Chrome
+
+## Configuration
+
+Change `http://localhost:8000/` to match a target-accessible server you've set
+up.
+
+## Limitations
+
+There are various limitations around maximum URL lengths, you may run in to
+these with users with a lot of saved passwords. A ZIP compression pass would
+probably resolve this, or multiple GET requests.
+
+## Credits
+
+This script is based on the minification of my
+[chrome-decrypt.ps1](https://github.com/thisismyrobot/chrome-decrypt.ps1)
+script, which itself built upon these projects:
+
+ * https://github.com/p0z/CPD
+ * https://github.com/ValterBricca/SQLite.Net-PCL
+ * https://github.com/ericsink/SQLitePCL.raw
+ * https://github.com/byt3bl33d3r/chrome-decrypter
+ * https://github.com/agentzex/chrome_v80_password_grabber
+ * https://github.com/0xfd3/Chrome-Password-Recovery
