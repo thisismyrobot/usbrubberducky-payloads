@@ -18,6 +18,21 @@ level of AV-detection alarm as Invoke-WebRequest.
 Change `http://localhost:8000/` to match a target-accessible server you've set
 up.
 
+## Example execution
+
+Passwords stored in Chrome:
+
+![](img/chrome.png)
+
+Ducky script running, with temporary Python server to capture the
+exfiltration:
+
+![](img/run.gif)
+
+The resultant base64 string of
+`aHR0cHM6Ly9leGFtcGxlLmNvbS8sZXhhbXBsZV91c2VyMSxleEBtcGwzUEFTU3cwckQh` decodes
+to `https://example.com/,example_user1,ex@mpl3PASSw0rD!`.
+
 ## Limitations
 
 There are various limitations around maximum URL lengths, you may run in to
