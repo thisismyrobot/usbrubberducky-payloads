@@ -29,9 +29,9 @@ exfiltration:
 
 ![](img/run.gif)
 
-The resultant base64 string of
-`aHR0cHM6Ly9leGFtcGxlLmNvbS8sZXhhbXBsZV91c2VyMSxleEBtcGwzUEFTU3cwckQh` decodes
-to `https://example.com/,example_user1,ex@mpl3PASSw0rD!`.
+The base64 string sent to the server
+(`aHR0cHM6Ly9leGFtcGxlLmNvbS8sZXhhbXBsZV91c2VyMSxleEBtcGwzUEFTU3cwckQh`)
+decodes to `https://example.com/,example_user1,ex@mpl3PASSw0rD!`.
 
 ## Limitations
 
