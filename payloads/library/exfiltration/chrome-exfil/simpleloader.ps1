@@ -23,4 +23,9 @@ $outputFile = "payload.txt"
 
 $script.split("`n") | ForEach {"STRING $_`nENTER" | Out-File -a -e "ASCII" "$outputFile"}
 
+"DELAY 1000",
+"STRING exit",
+"ENTER",
+"DELAY 250",
+"STRING exit",
 "ENTER" | Out-File -a -e "ASCII" "$outputFile"

